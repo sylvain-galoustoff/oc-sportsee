@@ -1,0 +1,11 @@
+@import "../../../styles/vars.scss";
+
+.navIcon {
+  background-color: $white;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}

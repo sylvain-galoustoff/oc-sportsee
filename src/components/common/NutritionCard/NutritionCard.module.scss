@@ -1,0 +1,25 @@
+@import "../../../styles/vars.scss";
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: $corner;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  color: $textLight;
+}

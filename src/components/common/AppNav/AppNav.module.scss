@@ -1,0 +1,31 @@
+@import "../../../styles/vars.scss";
+
+#header {
+  height: 90px;
+  background-color: $black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 1.6rem;
+
+  a {
+    color: $white;
+    font-weight: 500;
+  }
+}
+
+#appNav {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  @include dev;
+
+}
+
+#logo {
+  width: 180px;
+  display: flex;
+  align-items: center;
+}

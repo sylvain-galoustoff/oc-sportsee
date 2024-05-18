@@ -1,0 +1,65 @@
+@import "../../../styles/vars.scss";
+
+#dashboard {
+  display: flex;
+}
+
+#nav {
+  background-color: $black;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#header {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#stats {
+  flex: 1;
+  display: flex;
+  padding: 0 50px;
+  gap: 20px;
+}
+
+#graphs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.graph {
+  height: 320px;
+  @include card;
+}
+
+#resume {
+  display: flex;
+  gap: 20px;
+
+  .graph {
+    flex: 1;
+  }
+}
+
+#aside {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
