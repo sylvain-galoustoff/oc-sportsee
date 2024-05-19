@@ -14,18 +14,22 @@ function NutritionCard({ label, value }: PropsType) {
     calories: {
       textLabel: "Calories",
       icon: calories,
+      unit: "kCal",
     },
     proteines: {
       textLabel: "Protéines",
       icon: proteines,
+      unit: "g",
     },
     glucides: {
       textLabel: "Glucides",
       icon: glucides,
+      unit: "g",
     },
     lipides: {
       textLabel: "Lipides",
       icon: lipides,
+      unit: "g",
     },
   };
 
@@ -39,7 +43,10 @@ function NutritionCard({ label, value }: PropsType) {
         />
       </div>
       <div className={style.content}>
-        <p className="h3">{value}</p>
+        <p className="h3">
+          {value}
+          {nutrition[label]?.unit}
+        </p>
         <p className={style.label}>{nutrition[label]?.textLabel}</p>
       </div>
     </div>

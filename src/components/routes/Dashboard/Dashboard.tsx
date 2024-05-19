@@ -7,7 +7,7 @@ import strength from "../../../assets/strength.png";
 import NutritionCard from "../../common/NutritionCard/NutritionCard";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getUser } from "../../../services/services";
+import { getUser, getUserNutrition } from "../../../services/services";
 
 function Dashboard() {
   const params = useParams();
@@ -16,6 +16,13 @@ function Dashboard() {
     firstname: "",
     lastname: "",
   });
+  const [userNutrition, setUserNutrition] = useState({
+    id: "",
+    glucides: "",
+    lipides: "",
+    proteines: "",
+    calories: "",
+  });
 
   useEffect(() => {
     const userId = params.userId;
@@ -23,6 +30,11 @@ function Dashboard() {
       const userData = getUser(userId);
       if (userData) {
         setUser(userData);
+      }
+
+      const userNutritionData = getUserNutrition(userId);
+      if (userNutritionData) {
+        setUserNutrition(userNutritionData);
       }
     }
   }, [params]);
@@ -56,10 +68,10 @@ function Dashboard() {
             </div>
           </main>
           <aside id={style.aside}>
-            <NutritionCard label="calories" value="1930kCal" />
-            <NutritionCard label="proteines" value="155g" />
-            <NutritionCard label="glucides" value="290g" />
-            <NutritionCard label="lipides" value="50g" />
+            <NutritionCard label="calories" value={userNutrition.calories} />
+            <NutritionCard label="proteines" value={userNutrition.proteines} />
+            <NutritionCard label="glucides" value={userNutrition.glucides} />
+            <NutritionCard label="lipides" value={userNutrition.lipides} />
           </aside>
         </div>
       </div>

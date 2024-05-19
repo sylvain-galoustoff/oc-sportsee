@@ -1,3 +1,4 @@
+import { NutritionsType } from "../models/Nutrition";
 import { UsersType } from "../models/User";
 
 export const users: UsersType = [
@@ -53,7 +54,7 @@ export const users: UsersType = [
   },
 ];
 
-export const nutrition = [
+export const nutrition: NutritionsType = [
   {
     id: "1",
     glucides: "250",
