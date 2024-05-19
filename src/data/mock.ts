@@ -1,7 +1,8 @@
-import { NutritionsType } from "../models/Nutrition";
-import { UsersType } from "../models/User";
+import { ActivityType } from "../models/Activity";
+import { NutritionType } from "../models/Nutrition";
+import { UserType } from "../models/User";
 
-export const users: UsersType = [
+export const users: UserType[] = [
   {
     id: "1",
     firstname: "Alice",
@@ -54,7 +55,7 @@ export const users: UsersType = [
   },
 ];
 
-export const nutrition: NutritionsType = [
+export const nutrition: NutritionType[] = [
   {
     id: "1",
     glucides: "250",
@@ -124,5 +125,158 @@ export const nutrition: NutritionsType = [
     lipides: "60",
     proteines: "65",
     calories: "2000",
+  },
+];
+
+export const activities: ActivityType[] = [
+  {
+    userId: "1",
+    activityData: [
+      { day: "1", poids: "66", calories: "365" },
+      { day: "2", poids: "65.8", calories: "370" },
+      { day: "3", poids: "65.6", calories: "360" },
+      { day: "4", poids: "65.4", calories: "355" },
+      { day: "5", poids: "65.3", calories: "350" },
+      { day: "6", poids: "65.1", calories: "345" },
+      { day: "7", poids: "65.0", calories: "340" },
+      { day: "8", poids: "64.8", calories: "335" },
+      { day: "9", poids: "64.7", calories: "330" },
+      { day: "10", poids: "64.5", calories: "325" },
+    ],
+  },
+  {
+    userId: "2",
+    activityData: [
+      { day: "1", poids: "70", calories: "400" },
+      { day: "2", poids: "69.8", calories: "395" },
+      { day: "3", poids: "69.6", calories: "390" },
+      { day: "4", poids: "69.4", calories: "385" },
+      { day: "5", poids: "69.2", calories: "380" },
+      { day: "6", poids: "69.0", calories: "375" },
+      { day: "7", poids: "68.8", calories: "370" },
+      { day: "8", poids: "68.6", calories: "365" },
+      { day: "9", poids: "68.4", calories: "360" },
+      { day: "10", poids: "68.2", calories: "355" },
+    ],
+  },
+  {
+    userId: "3",
+    activityData: [
+      { day: "1", poids: "80", calories: "500" },
+      { day: "2", poids: "79.8", calories: "495" },
+      { day: "3", poids: "79.6", calories: "490" },
+      { day: "4", poids: "79.4", calories: "485" },
+      { day: "5", poids: "79.2", calories: "480" },
+      { day: "6", poids: "79.0", calories: "475" },
+      { day: "7", poids: "78.8", calories: "470" },
+      { day: "8", poids: "78.6", calories: "465" },
+      { day: "9", poids: "78.4", calories: "460" },
+      { day: "10", poids: "78.2", calories: "455" },
+    ],
+  },
+  {
+    userId: "4",
+    activityData: [
+      { day: "1", poids: "85", calories: "550" },
+      { day: "2", poids: "84.8", calories: "545" },
+      { day: "3", poids: "84.6", calories: "540" },
+      { day: "4", poids: "84.4", calories: "535" },
+      { day: "5", poids: "84.2", calories: "530" },
+      { day: "6", poids: "84.0", calories: "525" },
+      { day: "7", poids: "83.8", calories: "520" },
+      { day: "8", poids: "83.6", calories: "515" },
+      { day: "9", poids: "83.4", calories: "510" },
+      { day: "10", poids: "83.2", calories: "505" },
+    ],
+  },
+  {
+    userId: "5",
+    activityData: [
+      { day: "1", poids: "60", calories: "300" },
+      { day: "2", poids: "59.8", calories: "295" },
+      { day: "3", poids: "59.6", calories: "290" },
+      { day: "4", poids: "59.4", calories: "285" },
+      { day: "5", poids: "59.2", calories: "280" },
+      { day: "6", poids: "59.0", calories: "275" },
+      { day: "7", poids: "58.8", calories: "270" },
+      { day: "8", poids: "58.6", calories: "265" },
+      { day: "9", poids: "58.4", calories: "260" },
+      { day: "10", poids: "58.2", calories: "255" },
+    ],
+  },
+  {
+    userId: "6",
+    activityData: [
+      { day: "1", poids: "72", calories: "420" },
+      { day: "2", poids: "71.8", calories: "415" },
+      { day: "3", poids: "71.6", calories: "410" },
+      { day: "4", poids: "71.4", calories: "405" },
+      { day: "5", poids: "71.2", calories: "400" },
+      { day: "6", poids: "71.0", calories: "395" },
+      { day: "7", poids: "70.8", calories: "390" },
+      { day: "8", poids: "70.6", calories: "385" },
+      { day: "9", poids: "70.4", calories: "380" },
+      { day: "10", poids: "70.2", calories: "375" },
+    ],
+  },
+  {
+    userId: "7",
+    activityData: [
+      { day: "1", poids: "68", calories: "380" },
+      { day: "2", poids: "67.8", calories: "375" },
+      { day: "3", poids: "67.6", calories: "370" },
+      { day: "4", poids: "67.4", calories: "365" },
+      { day: "5", poids: "67.2", calories: "360" },
+      { day: "6", poids: "67.0", calories: "355" },
+      { day: "7", poids: "66.8", calories: "350" },
+      { day: "8", poids: "66.6", calories: "345" },
+      { day: "9", poids: "66.4", calories: "340" },
+      { day: "10", poids: "66.2", calories: "335" },
+    ],
+  },
+  {
+    userId: "8",
+    activityData: [
+      { day: "1", poids: "74", calories: "440" },
+      { day: "2", poids: "73.8", calories: "435" },
+      { day: "3", poids: "73.6", calories: "430" },
+      { day: "4", poids: "73.4", calories: "425" },
+      { day: "5", poids: "73.2", calories: "420" },
+      { day: "6", poids: "73.0", calories: "415" },
+      { day: "7", poids: "72.8", calories: "410" },
+      { day: "8", poids: "72.6", calories: "405" },
+      { day: "9", poids: "72.4", calories: "400" },
+      { day: "10", poids: "72.2", calories: "395" },
+    ],
+  },
+  {
+    userId: "9",
+    activityData: [
+      { day: "1", poids: "78", calories: "480" },
+      { day: "2", poids: "77.8", calories: "475" },
+      { day: "3", poids: "77.6", calories: "470" },
+      { day: "4", poids: "77.4", calories: "465" },
+      { day: "5", poids: "77.2", calories: "460" },
+      { day: "6", poids: "77.0", calories: "455" },
+      { day: "7", poids: "76.8", calories: "450" },
+      { day: "8", poids: "76.6", calories: "445" },
+      { day: "9", poids: "76.4", calories: "440" },
+      { day: "10", poids: "76.2", calories: "435" },
+    ],
+  },
+  {
+    userId: "10",
+    activityData: [
+      { day: "1", poids: "82", calories: "520" },
+      { day: "2", poids: "81.8", calories: "515" },
+      { day: "3", poids: "81.6", calories: "510" },
+      { day: "4", poids: "81.4", calories: "505" },
+      { day: "5", poids: "81.2", calories: "500" },
+      { day: "6", poids: "81.0", calories: "495" },
+      { day: "7", poids: "80.8", calories: "490" },
+      { day: "8", poids: "80.6", calories: "485" },
+      { day: "9", poids: "80.4", calories: "480" },
+      { day: "10", poids: "80.2", calories: "475" },
+    ],
   },
 ];

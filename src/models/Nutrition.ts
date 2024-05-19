@@ -5,5 +5,3 @@ export type NutritionType = {
   proteines: string;
   calories: string;
 };
-
-export type NutritionsType = NutritionType[];
