@@ -1,6 +1,7 @@
-type UserType = {
+export type UserType = {
   id: string;
   firstname: string;
   lastname: string;
 };
-export default UserType;
+
+export type UsersType = UserType[];
