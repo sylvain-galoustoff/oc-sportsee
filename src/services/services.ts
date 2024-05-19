@@ -1,6 +1,7 @@
 import env from "../env";
 import { users } from "../data/mock";
 
+/* GET USER */
 export const getUser = (userId: string) => {
   if (env.api === "local") {
     const user = getUserFromMock(userId);
@@ -15,7 +16,7 @@ const getUserFromMock = (userId: string) => {
     return user[0];
   } else {
     console.error(
-      "Erreur de récupération de l'utilisateur depuis les donées mockées"
+      "Erreur de récupération de l'utilisateur depuis les données mockées"
     );
   }
 };

@@ -1,3 +1,5 @@
+import UserType from "../models/User";
+
 export const users = [
   {
     id: "1",
@@ -51,10 +53,4 @@ export const users = [
   },
 ];
 
-export type UserType = {
-  id: string;
-  firstname: string;
-  lastname: string;
-};
-
-export type UsersType = UserType[] | undefined;
+export type UsersType = UserType[];
