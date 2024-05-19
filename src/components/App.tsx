@@ -10,7 +10,7 @@ function App() {
       <AppNav />
       <Routes>
         <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/:userId" element={<Dashboard />} />
       </Routes>
     </div>
   );

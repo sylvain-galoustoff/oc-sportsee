@@ -29,9 +29,6 @@ function NutritionCard({ label, value }: PropsType) {
     },
   };
 
-  {
-    console.log(nutrition.proteines?.icon);
-  }
   return (
     <div className={`card ${style.card}`}>
       <div className={style.icon}>

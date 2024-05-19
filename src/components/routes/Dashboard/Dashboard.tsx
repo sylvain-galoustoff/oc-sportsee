@@ -5,8 +5,28 @@ import swim from "../../../assets/swim.png";
 import bike from "../../../assets/bike.png";
 import strength from "../../../assets/strength.png";
 import NutritionCard from "../../common/NutritionCard/NutritionCard";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getUser } from "../../../services/services";
 
 function Dashboard() {
+  const params = useParams();
+  const [user, setUser] = useState({
+    id: "",
+    firstname: "",
+    lastname: "",
+  });
+
+  useEffect(() => {
+    const userId = params.userId;
+    if (userId) {
+      const userData = getUser(userId);
+      if (userData) {
+        setUser(userData);
+      }
+    }
+  }, [params]);
+
   return (
     <div className="content" id={style.dashboard}>
       <div id={style.nav}>
@@ -19,7 +39,7 @@ function Dashboard() {
       <div id={style.content}>
         <div id={style.header}>
           <h1>
-            Bonjour <span className="primary">Thomas</span>
+            Bonjour <span className="primary">{user.firstname}</span>
           </h1>
           <p id={style.message}>
             Félicitation ! Vous avez explosé vos objectifs hier 👏
