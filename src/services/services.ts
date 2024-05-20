@@ -1,66 +1,49 @@
 import env from "../env";
-import { users, nutrition, activities } from "../data/mock";
+import { users, nutrition, activities, sessionDuration } from "../data/mock";
+
+function getMockDataFromUserId(data: unknown[], userId: string) {
+  const targetData = [...data];
+  const returnData = targetData.filter((data) => data.userId === userId);
+  if (returnData.length === 1) {
+    return returnData[0];
+  } else {
+    console.error(
+      `Problème de récupération de l'utilisateur ${userId} dans les données suivante`,
+      data
+    );
+  }
+}
 
 /* GET USER */
 export const getUser = (userId: string) => {
   if (env.api === "local") {
-    const user = getUserFromMock(userId);
+    const user = getMockDataFromUserId(users, userId);
     return user;
-  }
-};
-
-const getUserFromMock = (userId: string) => {
-  const usersData = [...users];
-  const user = usersData.filter((user) => user.id === userId);
-  if (user.length === 1) {
-    return user[0];
-  } else {
-    console.error(
-      "Erreur de récupération de l'utilisateur depuis les données mockées"
-    );
   }
 };
 
 /* GET USER NUTRITION */
 export const getUserNutrition = (userId: string) => {
   if (env.api === "local") {
-    const user = getUserNutritionFromMock(userId);
-    return user;
-  }
-};
-
-const getUserNutritionFromMock = (userId: string) => {
-  const usersNutritionData = [...nutrition];
-  const userNutritionData = usersNutritionData.filter(
-    (userNutrition) => userNutrition.id === userId
-  );
-  if (userNutritionData.length === 1) {
-    return userNutritionData[0];
-  } else {
-    console.error(
-      "Erreur de récupération des données de nutrition de l'utilisateur depuis les données mockées"
-    );
+    const nutritionData = getMockDataFromUserId(nutrition, userId);
+    return nutritionData;
   }
 };
 
 /* GET USER ACTIVITY */
 export const getUserActivity = (userId: string) => {
   if (env.api === "local") {
-    const user = getUserActivityFromMock(userId);
-    return user;
+    const activityData = getMockDataFromUserId(activities, userId);
+    return activityData;
   }
 };
 
-const getUserActivityFromMock = (userId: string) => {
-  const usersActivityData = [...activities];
-  const userActivityData = usersActivityData.filter(
-    (activity) => activity.userId === userId
-  );
-  if (userActivityData.length === 1) {
-    return userActivityData[0];
-  } else {
-    console.error(
-      "Erreur de récupération des données d'activité de l'utilisateur depuis les données mockées"
-    );
+/* GET USER SESSION DURATION */
+export const getUserSessionDuration = (userId: string) => {
+  if (env.api === "local") {
+    const sessionData = getMockDataFromUserId(sessionDuration, userId);
+    console.log(sessionData);
+
+    return sessionData;
   }
 };

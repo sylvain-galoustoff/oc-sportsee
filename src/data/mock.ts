@@ -1,55 +1,56 @@
 import { ActivityType } from "../models/Activity";
 import { NutritionType } from "../models/Nutrition";
+import { UserSessionDuration } from "../models/Session";
 import { UserType } from "../models/User";
 
 export const users: UserType[] = [
   {
-    id: "1",
+    userId: "1",
     firstname: "Alice",
     lastname: "Smith",
   },
   {
-    id: "2",
+    userId: "2",
     firstname: "Bob",
     lastname: "Johnson",
   },
   {
-    id: "3",
+    userId: "3",
     firstname: "Carol",
     lastname: "Williams",
   },
   {
-    id: "4",
+    userId: "4",
     firstname: "David",
     lastname: "Brown",
   },
   {
-    id: "5",
+    userId: "5",
     firstname: "Eve",
     lastname: "Jones",
   },
   {
-    id: "6",
+    userId: "6",
     firstname: "Frank",
     lastname: "Garcia",
   },
   {
-    id: "7",
+    userId: "7",
     firstname: "Grace",
     lastname: "Martinez",
   },
   {
-    id: "8",
+    userId: "8",
     firstname: "Hank",
     lastname: "Rodriguez",
   },
   {
-    id: "9",
+    userId: "9",
     firstname: "Ivy",
     lastname: "Martinez",
   },
   {
-    id: "10",
+    userId: "10",
     firstname: "Jack",
     lastname: "Davis",
   },
@@ -57,70 +58,70 @@ export const users: UserType[] = [
 
 export const nutrition: NutritionType[] = [
   {
-    id: "1",
+    userId: "1",
     glucides: "250",
     lipides: "70",
     proteines: "60",
     calories: "2000",
   },
   {
-    id: "2",
+    userId: "2",
     glucides: "300",
     lipides: "80",
     proteines: "70",
     calories: "2500",
   },
   {
-    id: "3",
+    userId: "3",
     glucides: "150",
     lipides: "50",
     proteines: "50",
     calories: "1800",
   },
   {
-    id: "4",
+    userId: "4",
     glucides: "200",
     lipides: "60",
     proteines: "65",
     calories: "2200",
   },
   {
-    id: "5",
+    userId: "5",
     glucides: "180",
     lipides: "55",
     proteines: "55",
     calories: "1900",
   },
   {
-    id: "6",
+    userId: "6",
     glucides: "275",
     lipides: "90",
     proteines: "75",
     calories: "2700",
   },
   {
-    id: "7",
+    userId: "7",
     glucides: "225",
     lipides: "65",
     proteines: "70",
     calories: "2300",
   },
   {
-    id: "8",
+    userId: "8",
     glucides: "260",
     lipides: "75",
     proteines: "80",
     calories: "2500",
   },
   {
-    id: "9",
+    userId: "9",
     glucides: "240",
     lipides: "70",
     proteines: "60",
     calories: "2100",
   },
   {
-    id: "10",
+    userId: "10",
     glucides: "190",
     lipides: "60",
     proteines: "65",
@@ -277,6 +278,129 @@ export const activities: ActivityType[] = [
       { day: "8", poids: "80.6", calories: "485" },
       { day: "9", poids: "80.4", calories: "480" },
       { day: "10", poids: "80.2", calories: "475" },
+    ],
+  },
+];
+
+export const sessionDuration: UserSessionDuration[] = [
+  {
+    userId: "1",
+    duration: [
+      { day: "Lundi", time: "68" },
+      { day: "Mardi", time: "45" },
+      { day: "Mercredi", time: "70" },
+      { day: "Jeudi", time: "55" },
+      { day: "Vendredi", time: "80" },
+      { day: "Samedi", time: "90" },
+      { day: "Dimanche", time: "60" },
+    ],
+  },
+  {
+    userId: "2",
+    duration: [
+      { day: "Lundi", time: "50" },
+      { day: "Mardi", time: "30" },
+      { day: "Mercredi", time: "40" },
+      { day: "Jeudi", time: "60" },
+      { day: "Vendredi", time: "70" },
+      { day: "Samedi", time: "75" },
+      { day: "Dimanche", time: "65" },
+    ],
+  },
+  {
+    userId: "3",
+    duration: [
+      { day: "Lundi", time: "120" },
+      { day: "Mardi", time: "115" },
+      { day: "Mercredi", time: "110" },
+      { day: "Jeudi", time: "100" },
+      { day: "Vendredi", time: "105" },
+      { day: "Samedi", time: "95" },
+      { day: "Dimanche", time: "85" },
+    ],
+  },
+  {
+    userId: "4",
+    duration: [
+      { day: "Lundi", time: "30" },
+      { day: "Mardi", time: "45" },
+      { day: "Mercredi", time: "50" },
+      { day: "Jeudi", time: "55" },
+      { day: "Vendredi", time: "60" },
+      { day: "Samedi", time: "65" },
+      { day: "Dimanche", time: "70" },
+    ],
+  },
+  {
+    userId: "5",
+    duration: [
+      { day: "Lundi", time: "25" },
+      { day: "Mardi", time: "35" },
+      { day: "Mercredi", time: "45" },
+      { day: "Jeudi", time: "50" },
+      { day: "Vendredi", time: "55" },
+      { day: "Samedi", time: "65" },
+      { day: "Dimanche", time: "75" },
+    ],
+  },
+  {
+    userId: "6",
+    duration: [
+      { day: "Lundi", time: "90" },
+      { day: "Mardi", time: "85" },
+      { day: "Mercredi", time: "95" },
+      { day: "Jeudi", time: "100" },
+      { day: "Vendredi", time: "105" },
+      { day: "Samedi", time: "110" },
+      { day: "Dimanche", time: "115" },
+    ],
+  },
+  {
+    userId: "7",
+    duration: [
+      { day: "Lundi", time: "40" },
+      { day: "Mardi", time: "45" },
+      { day: "Mercredi", time: "50" },
+      { day: "Jeudi", time: "55" },
+      { day: "Vendredi", time: "60" },
+      { day: "Samedi", time: "65" },
+      { day: "Dimanche", time: "70" },
+    ],
+  },
+  {
+    userId: "8",
+    duration: [
+      { day: "Lundi", time: "60" },
+      { day: "Mardi", time: "65" },
+      { day: "Mercredi", time: "70" },
+      { day: "Jeudi", time: "75" },
+      { day: "Vendredi", time: "80" },
+      { day: "Samedi", time: "85" },
+      { day: "Dimanche", time: "90" },
+    ],
+  },
+  {
+    userId: "9",
+    duration: [
+      { day: "Lundi", time: "100" },
+      { day: "Mardi", time: "95" },
+      { day: "Mercredi", time: "90" },
+      { day: "Jeudi", time: "85" },
+      { day: "Vendredi", time: "80" },
+      { day: "Samedi", time: "75" },
+      { day: "Dimanche", time: "70" },
+    ],
+  },
+  {
+    userId: "10",
+    duration: [
+      { day: "Lundi", time: "120" },
+      { day: "Mardi", time: "115" },
+      { day: "Mercredi", time: "110" },
+      { day: "Jeudi", time: "105" },
+      { day: "Vendredi", time: "100" },
+      { day: "Samedi", time: "95" },
+      { day: "Dimanche", time: "90" },
     ],
   },
 ];

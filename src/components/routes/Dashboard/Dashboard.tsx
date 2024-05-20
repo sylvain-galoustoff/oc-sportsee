@@ -11,9 +11,12 @@ import {
   getUser,
   getUserActivity,
   getUserNutrition,
+  getUserSessionDuration,
 } from "../../../services/services";
 import Activity from "../../common/Activity/Activity";
 import { ActivityDataType } from "../../../models/Activity";
+import { SessionType } from "../../../models/Session";
+import SessionDuration from "../../common/SessionDuration/SessionDuration";
 
 function Dashboard() {
   const params = useParams();
@@ -30,6 +33,9 @@ function Dashboard() {
     calories: "",
   });
   const [userActivity, setUserActivity] = useState<ActivityDataType[]>([]);
+  const [userSessionDuration, setUserSessionDuration] = useState<SessionType[]>(
+    []
+  );
 
   useEffect(() => {
     const userId = params.userId;
@@ -47,6 +53,11 @@ function Dashboard() {
       const userActivityData = getUserActivity(userId);
       if (userActivityData) {
         setUserActivity(userActivityData.activityData);
+      }
+
+      const userSessionDurationData = getUserSessionDuration(userId);
+      if (userSessionDurationData) {
+        setUserSessionDuration(userSessionDurationData.duration);
       }
     }
   }, [params]);
@@ -74,7 +85,7 @@ function Dashboard() {
           <main id={style.graphs}>
             <Activity data={userActivity} />
             <div id={style.resume}>
-              <div className={style.graph} id={style.duree}></div>
+              <SessionDuration data={userSessionDuration} />
               <div className={style.graph} id={style.radar}></div>
               <div className={style.graph} id={style.kpi}></div>
             </div>

@@ -1,0 +1,9 @@
+@import "../../../styles/vars.scss";
+
+.graph {
+  position: relative;
+  height: 320px;
+  @include card;
+  flex: 1;
+  background-color: $primary;
+}

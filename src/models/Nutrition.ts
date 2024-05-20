@@ -1,5 +1,5 @@
 export type NutritionType = {
-  id: string;
+  userId: string;
   glucides: string;
   lipides: string;
   proteines: string;
