@@ -1,5 +1,5 @@
 import env from "../env";
-import { users, nutrition } from "../data/mock";
+import { users, nutrition, activities } from "../data/mock";
 
 /* GET USER */
 export const getUser = (userId: string) => {
@@ -39,6 +39,28 @@ const getUserNutritionFromMock = (userId: string) => {
   } else {
     console.error(
       "Erreur de récupération des données de nutrition de l'utilisateur depuis les données mockées"
+    );
+  }
+};
+
+/* GET USER ACTIVITY */
+export const getUserActivity = (userId: string) => {
+  if (env.api === "local") {
+    const user = getUserActivityFromMock(userId);
+    return user;
+  }
+};
+
+const getUserActivityFromMock = (userId: string) => {
+  const usersActivityData = [...activities];
+  const userActivityData = usersActivityData.filter(
+    (activity) => activity.userId === userId
+  );
+  if (userActivityData.length === 1) {
+    return userActivityData[0];
+  } else {
+    console.error(
+      "Erreur de récupération des données d'activité de l'utilisateur depuis les données mockées"
     );
   }
 };

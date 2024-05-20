@@ -7,7 +7,13 @@ import strength from "../../../assets/strength.png";
 import NutritionCard from "../../common/NutritionCard/NutritionCard";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getUser, getUserNutrition } from "../../../services/services";
+import {
+  getUser,
+  getUserActivity,
+  getUserNutrition,
+} from "../../../services/services";
+import Activity from "../../common/Activity/Activity";
+import { ActivityDataType } from "../../../models/Activity";
 
 function Dashboard() {
   const params = useParams();
@@ -23,6 +29,7 @@ function Dashboard() {
     proteines: "",
     calories: "",
   });
+  const [userActivity, setUserActivity] = useState<ActivityDataType[]>([]);
 
   useEffect(() => {
     const userId = params.userId;
@@ -35,6 +42,11 @@ function Dashboard() {
       const userNutritionData = getUserNutrition(userId);
       if (userNutritionData) {
         setUserNutrition(userNutritionData);
+      }
+
+      const userActivityData = getUserActivity(userId);
+      if (userActivityData) {
+        setUserActivity(userActivityData.activityData);
       }
     }
   }, [params]);
@@ -60,7 +72,7 @@ function Dashboard() {
 
         <div id={style.stats}>
           <main id={style.graphs}>
-            <div className={style.graph} id={style.poids}></div>
+            <Activity data={userActivity} />
             <div id={style.resume}>
               <div className={style.graph} id={style.duree}></div>
               <div className={style.graph} id={style.radar}></div>
