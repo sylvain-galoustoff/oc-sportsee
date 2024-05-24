@@ -1,18 +1,16 @@
-/* TYPES */
-
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import NavIcon from "../../common/NavIcon/NavIcon";
 import NutritionCard from "../../common/NutritionCard/NutritionCard";
 import Activity from "../../common/Activity/Activity";
 import SessionDuration from "../../common/SessionDuration/SessionDuration";
-/* STYLES */
+import Stats from "../../common/Radar/Stats";
+import Score from "../../common/Score/Score";
 import style from "./Dashboard.module.scss";
-/* ASSETS */
 import zen from "../../../assets/zen.png";
 import swim from "../../../assets/swim.png";
 import bike from "../../../assets/bike.png";
 import strength from "../../../assets/strength.png";
-
-import { useState, useEffect } from "react";
 import {
   ActivityType,
   NutritionType,
@@ -21,10 +19,7 @@ import {
   StatType,
   ScoreType,
 } from "../../../models/Models";
-import { useParams } from "react-router-dom";
 import { getActivity, getDurations, getNutrition, getScore, getStats, getUser } from "../../../services/services";
-import Stats from "../../common/Radar/Stats";
-import Score from "../../common/Score/Score";
 
 function Dashboard() {
   const params = useParams();
@@ -56,11 +51,6 @@ function Dashboard() {
     };
 
     fetchData();
-
-    // if (userId) {
-    //   setStats(getStats(userId));
-    //   setScore(getScore(userId));
-    // }
   }, [params]);
 
   return (

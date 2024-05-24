@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+# Sportsee, projet Open Classrooms
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
 
-Currently, two official plugins are available:
+`git clone https://github.com/sylvain-galoustoff/oc-sportsee.git`
+`cd oc-sportsee`
+`npm install`
+`npm run dev`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Utilisation
 
-## Expanding the ESLint configuration
+L'application retrouve les données de l'utilisateur en fonction d'un id passé en paramètre de l'URL, suivant ce schema :
+`http://localhost:5173/${userId}`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Récupération des données
 
-- Configure the top-level `parserOptions` property like this:
+L'application peut récupérer les données depuis deux sources distinctes :
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Des données locales (mock)
+- Des données distantes fournie par une API qu'il faudra installer pour l'utiliser (voir : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Pour passer d'une source à l'autre, modifiez le fichier `src/env.ts` :
+
+- `api: 'locale'` pour utiliser les données mockées (réglage par défaut)
+- `api: 'distant'` pour utiliser l'API REST

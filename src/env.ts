@@ -1,5 +1,5 @@
 const env = {
-  api: "distant",
+  api: "local",
 };
 
 export default env;
