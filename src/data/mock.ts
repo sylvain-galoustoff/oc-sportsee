@@ -4,6 +4,7 @@ import {
   UserActivityType,
   UserSessionDurationType,
   UserStatType,
+  UserScoreType,
 } from "../models/Models";
 
 export const users: UserType[] = [
@@ -517,6 +518,159 @@ export const stats: UserStatType[] = [
       { subject: "Endurance", value: "7" },
       { subject: "Energie", value: "10" },
       { subject: "Cardio", value: "8" },
+    ],
+  },
+];
+
+export const scores: UserScoreType[] = [
+  {
+    userId: "1",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 72,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "2",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 85,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "3",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 90,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "4",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 65,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "5",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 78,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "6",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 50,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "7",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 92,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "8",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 68,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "9",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 74,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "10",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 88,
+        fill: "#E60000",
+      },
     ],
   },
 ];

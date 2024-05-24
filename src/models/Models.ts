@@ -42,3 +42,14 @@ export type UserStatType = {
   userId: string;
   statistiques: StatType[];
 };
+
+export type ScoreType = {
+  name: string;
+  progress: number;
+  fill: string;
+};
+
+export type UserScoreType = {
+  userId: string;
+  progress: ScoreType[];
+};

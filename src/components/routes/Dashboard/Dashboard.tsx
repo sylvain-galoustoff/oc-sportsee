@@ -19,16 +19,19 @@ import {
   UserType,
   SessionDurationType,
   StatType,
+  ScoreType,
 } from "../../../models/Models";
 import { useParams } from "react-router-dom";
 import {
   getActivity,
   getDurations,
   getNutrition,
+  getScore,
   getStats,
   getUser,
 } from "../../../services/services";
 import Stats from "../../common/Radar/Stats";
+import Score from "../../common/Score/Score";
 
 function Dashboard() {
   const params = useParams();
@@ -37,6 +40,7 @@ function Dashboard() {
   const [activities, setActivities] = useState<ActivityType[]>();
   const [durations, setDurations] = useState<SessionDurationType[]>();
   const [stats, setStats] = useState<StatType[]>();
+  const [score, setScore] = useState<ScoreType[]>();
 
   useEffect(() => {
     const userId = params.userId;
@@ -46,6 +50,7 @@ function Dashboard() {
       setActivities(getActivity(userId));
       setDurations(getDurations(userId));
       setStats(getStats(userId));
+      setScore(getScore(userId));
     }
   }, [params]);
 
@@ -74,7 +79,7 @@ function Dashboard() {
             <div id={style.resume}>
               <SessionDuration data={durations} />
               <Stats data={stats} />
-              <div className={style.graph} id={style.kpi}></div>
+              <Score data={score} />
             </div>
           </main>
           <aside id={style.aside}>

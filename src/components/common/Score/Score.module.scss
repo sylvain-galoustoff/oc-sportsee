@@ -1,0 +1,44 @@
+@import "../../../styles/vars.scss";
+
+.graph {
+  position: relative;
+  height: 320px;
+  @include card;
+  flex: 1;
+}
+
+.legend {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.scoreText {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scoreTextWrapper {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 226px;
+  height: 226px;
+  background-color: $white;
+  border-radius: 50%;
+}
+
+.scoreLabel {
+  color: $textLight;
+  line-height: 1.5;
+}

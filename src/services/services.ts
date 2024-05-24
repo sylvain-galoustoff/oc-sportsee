@@ -5,6 +5,7 @@ import {
   activities,
   sessionDuration,
   stats,
+  scores,
 } from "../data/mock";
 import {
   NutritionType,
@@ -12,6 +13,7 @@ import {
   UserType,
   SessionDurationType,
   StatType,
+  ScoreType,
 } from "../models/Models";
 
 export const getUser = (userId: string): UserType | undefined => {
@@ -53,5 +55,13 @@ export const getStats = (userId: string): StatType[] | undefined => {
     const mockData = [...stats];
     const returnedData = mockData.filter((user) => user.userId === userId);
     return returnedData[0].statistiques;
+  }
+};
+
+export const getScore = (userId: string): ScoreType[] | undefined => {
+  if (env.api === "local") {
+    const mockData = [...scores];
+    const returnedData = mockData.filter((user) => user.userId === userId);
+    return returnedData[0].progress;
   }
 };
