@@ -23,3 +23,8 @@ Pour passer d'une source à l'autre, modifiez le fichier `src/env.ts` :
 
 - `api: 'locale'` pour utiliser les données mockées (réglage par défaut)
 - `api: 'distant'` pour utiliser l'API REST
+
+_NOTE_
+
+- L'api locale propose 10 utilisateurs (userId de 1 à 10 inclus)
+- L'api distance ne propose que 2 utilisateurs avec les userId 12 et 18
