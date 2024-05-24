@@ -22,14 +22,7 @@ import {
   ScoreType,
 } from "../../../models/Models";
 import { useParams } from "react-router-dom";
-import {
-  getActivity,
-  getDurations,
-  getNutrition,
-  getScore,
-  getStats,
-  getUser,
-} from "../../../services/services";
+import { getActivity, getDurations, getNutrition, getScore, getStats, getUser } from "../../../services/services";
 import Stats from "../../common/Radar/Stats";
 import Score from "../../common/Score/Score";
 
@@ -44,14 +37,30 @@ function Dashboard() {
 
   useEffect(() => {
     const userId = params.userId;
-    if (userId) {
-      setUser(getUser(userId));
-      setNutrition(getNutrition(userId));
-      setActivities(getActivity(userId));
-      setDurations(getDurations(userId));
-      setStats(getStats(userId));
-      setScore(getScore(userId));
-    }
+
+    const fetchData = async () => {
+      if (userId) {
+        const userData = await getUser(userId);
+        setUser(userData);
+        const userNutrition = await getNutrition(userId);
+        setNutrition(userNutrition);
+        const userActivity = await getActivity(userId);
+        setActivities(userActivity);
+        const userDurations = await getDurations(userId);
+        setDurations(userDurations);
+        const userStats = await getStats(userId);
+        setStats(userStats);
+        const userScore = await getScore(userId);
+        setScore(userScore);
+      }
+    };
+
+    fetchData();
+
+    // if (userId) {
+    //   setStats(getStats(userId));
+    //   setScore(getScore(userId));
+    // }
   }, [params]);
 
   return (
@@ -68,9 +77,7 @@ function Dashboard() {
           <h1>
             Bonjour <span className="primary">{user?.firstname}</span>
           </h1>
-          <p id={style.message}>
-            Félicitation ! Vous avez explosé vos objectifs hier 👏
-          </p>
+          <p id={style.message}>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
 
         <div id={style.stats}>
