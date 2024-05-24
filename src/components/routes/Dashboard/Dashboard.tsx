@@ -18,6 +18,7 @@ import {
   NutritionType,
   UserType,
   SessionDurationType,
+  StatType,
 } from "../../../models/Models";
 import { useParams } from "react-router-dom";
 import {
@@ -27,6 +28,7 @@ import {
   getStats,
   getUser,
 } from "../../../services/services";
+import Radar from "../../common/Radar/Radar";
 
 function Dashboard() {
   const params = useParams();
@@ -34,6 +36,7 @@ function Dashboard() {
   const [nutrition, setNutrition] = useState<NutritionType>();
   const [activities, setActivities] = useState<ActivityType[]>();
   const [durations, setDurations] = useState<SessionDurationType[]>();
+  const [stats, setStats] = useState<StatType>();
 
   useEffect(() => {
     const userId = params.userId;
@@ -42,7 +45,7 @@ function Dashboard() {
       setNutrition(getNutrition(userId));
       setActivities(getActivity(userId));
       setDurations(getDurations(userId));
-      console.log(getStats(userId));
+      setStats(getStats(userId));
     }
   }, [params]);
 
@@ -70,7 +73,7 @@ function Dashboard() {
             <Activity data={activities} />
             <div id={style.resume}>
               <SessionDuration data={durations} />
-              <div className={style.graph} id={style.radar}></div>
+              <Radar data={stats} />
               <div className={style.graph} id={style.kpi}></div>
             </div>
           </main>

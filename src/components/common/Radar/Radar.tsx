@@ -1,40 +1,12 @@
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import { StatType } from "../../../models/Models";
 import style from "./Radar.module.scss";
-import { SessionType } from "../../../models/Session";
 
 type PropsType = {
-  data: SessionType[];
+  data: StatType | undefined;
 };
 
-function SessionDuration({ data }: PropsType) {
-  return (
-    <div className={style.graph}>
-      <ResponsiveContainer height={320}>
-        <LineChart data={data}>
-          <XAxis dataKey="day" />
-          <Line
-            type="monotone"
-            dataKey="time"
-            stroke="#fff"
-            dot={false}
-            activeDot={true}
-          />
-          <Tooltip
-            contentStyle={{
-              backgroundColor: "white",
-              textAlign: "center",
-            }}
-            labelStyle={{
-              display: "none",
-            }}
-            itemStyle={{
-              color: "black",
-            }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
-  );
+function Radar({ data }: PropsType) {
+  return <div className={style.graph} id={style.radar}></div>;
 }
 
-export default SessionDuration;
+export default Radar;
