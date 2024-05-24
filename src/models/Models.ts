@@ -34,15 +34,11 @@ export type UserSessionDurationType = {
 };
 
 export type StatType = {
-  intensity: number;
-  vitesse: number;
-  force: number;
-  endurance: number;
-  energy: number;
-  cardio: number;
+  subject: string;
+  value: string;
 };
 
 export type UserStatType = {
   userId: string;
-  stats: StatType;
+  statistiques: StatType[];
 };

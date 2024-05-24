@@ -28,7 +28,7 @@ import {
   getStats,
   getUser,
 } from "../../../services/services";
-import Radar from "../../common/Radar/Radar";
+import Stats from "../../common/Radar/Stats";
 
 function Dashboard() {
   const params = useParams();
@@ -36,7 +36,7 @@ function Dashboard() {
   const [nutrition, setNutrition] = useState<NutritionType>();
   const [activities, setActivities] = useState<ActivityType[]>();
   const [durations, setDurations] = useState<SessionDurationType[]>();
-  const [stats, setStats] = useState<StatType>();
+  const [stats, setStats] = useState<StatType[]>();
 
   useEffect(() => {
     const userId = params.userId;
@@ -73,7 +73,7 @@ function Dashboard() {
             <Activity data={activities} />
             <div id={style.resume}>
               <SessionDuration data={durations} />
-              <Radar data={stats} />
+              <Stats data={stats} />
               <div className={style.graph} id={style.kpi}></div>
             </div>
           </main>

@@ -48,10 +48,10 @@ export const getDurations = (
   }
 };
 
-export const getStats = (userId: string): StatType | undefined => {
+export const getStats = (userId: string): StatType[] | undefined => {
   if (env.api === "local") {
     const mockData = [...stats];
     const returnedData = mockData.filter((user) => user.userId === userId);
-    return returnedData[0].stats;
+    return returnedData[0].statistiques;
   }
 };
