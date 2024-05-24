@@ -6,7 +6,7 @@ import lipides from "../../../assets/fat-icon.png";
 
 type PropsType = {
   label: "calories" | "proteines" | "glucides" | "lipides";
-  value: string;
+  value: string | undefined;
 };
 
 function NutritionCard({ label, value }: PropsType) {

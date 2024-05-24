@@ -1,64 +1,48 @@
+/* TYPES */
+
 import NavIcon from "../../common/NavIcon/NavIcon";
+import NutritionCard from "../../common/NutritionCard/NutritionCard";
+import Activity from "../../common/Activity/Activity";
+import SessionDuration from "../../common/SessionDuration/SessionDuration";
+/* STYLES */
 import style from "./Dashboard.module.scss";
+/* ASSETS */
 import zen from "../../../assets/zen.png";
 import swim from "../../../assets/swim.png";
 import bike from "../../../assets/bike.png";
 import strength from "../../../assets/strength.png";
-import NutritionCard from "../../common/NutritionCard/NutritionCard";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+
+import { useState, useEffect } from "react";
 import {
+  ActivityType,
+  NutritionType,
+  UserType,
+  SessionDurationType,
+} from "../../../models/Models";
+import { useParams } from "react-router-dom";
+import {
+  getActivity,
+  getDurations,
+  getNutrition,
+  getStats,
   getUser,
-  getUserActivity,
-  getUserNutrition,
-  getUserSessionDuration,
 } from "../../../services/services";
-import Activity from "../../common/Activity/Activity";
-import { ActivityDataType } from "../../../models/Activity";
-import { SessionType } from "../../../models/Session";
-import SessionDuration from "../../common/SessionDuration/SessionDuration";
 
 function Dashboard() {
   const params = useParams();
-  const [user, setUser] = useState({
-    id: "",
-    firstname: "",
-    lastname: "",
-  });
-  const [userNutrition, setUserNutrition] = useState({
-    id: "",
-    glucides: "",
-    lipides: "",
-    proteines: "",
-    calories: "",
-  });
-  const [userActivity, setUserActivity] = useState<ActivityDataType[]>([]);
-  const [userSessionDuration, setUserSessionDuration] = useState<SessionType[]>(
-    []
-  );
+  const [user, setUser] = useState<UserType>();
+  const [nutrition, setNutrition] = useState<NutritionType>();
+  const [activities, setActivities] = useState<ActivityType[]>();
+  const [durations, setDurations] = useState<SessionDurationType[]>();
 
   useEffect(() => {
     const userId = params.userId;
     if (userId) {
-      const userData = getUser(userId);
-      if (userData) {
-        setUser(userData);
-      }
-
-      const userNutritionData = getUserNutrition(userId);
-      if (userNutritionData) {
-        setUserNutrition(userNutritionData);
-      }
-
-      const userActivityData = getUserActivity(userId);
-      if (userActivityData) {
-        setUserActivity(userActivityData.activityData);
-      }
-
-      const userSessionDurationData = getUserSessionDuration(userId);
-      if (userSessionDurationData) {
-        setUserSessionDuration(userSessionDurationData.duration);
-      }
+      setUser(getUser(userId));
+      setNutrition(getNutrition(userId));
+      setActivities(getActivity(userId));
+      setDurations(getDurations(userId));
+      console.log(getStats(userId));
     }
   }, [params]);
 
@@ -74,7 +58,7 @@ function Dashboard() {
       <div id={style.content}>
         <div id={style.header}>
           <h1>
-            Bonjour <span className="primary">{user.firstname}</span>
+            Bonjour <span className="primary">{user?.firstname}</span>
           </h1>
           <p id={style.message}>
             Félicitation ! Vous avez explosé vos objectifs hier 👏
@@ -83,18 +67,18 @@ function Dashboard() {
 
         <div id={style.stats}>
           <main id={style.graphs}>
-            <Activity data={userActivity} />
+            <Activity data={activities} />
             <div id={style.resume}>
-              <SessionDuration data={userSessionDuration} />
+              <SessionDuration data={durations} />
               <div className={style.graph} id={style.radar}></div>
               <div className={style.graph} id={style.kpi}></div>
             </div>
           </main>
           <aside id={style.aside}>
-            <NutritionCard label="calories" value={userNutrition.calories} />
-            <NutritionCard label="proteines" value={userNutrition.proteines} />
-            <NutritionCard label="glucides" value={userNutrition.glucides} />
-            <NutritionCard label="lipides" value={userNutrition.lipides} />
+            <NutritionCard label="calories" value={nutrition?.calories} />
+            <NutritionCard label="proteines" value={nutrition?.proteines} />
+            <NutritionCard label="glucides" value={nutrition?.glucides} />
+            <NutritionCard label="lipides" value={nutrition?.lipides} />
           </aside>
         </div>
       </div>

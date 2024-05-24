@@ -1,16 +1,24 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 import style from "./SessionDuration.module.scss";
-import { SessionType } from "../../../models/Session";
+import { SessionDurationType } from "../../../models/Models";
 
 type PropsType = {
-  data: SessionType[];
+  data: SessionDurationType[] | undefined;
 };
 
 function SessionDuration({ data }: PropsType) {
   return (
     <div className={style.graph}>
       <ResponsiveContainer height={320}>
-        <LineChart data={data}>
+        <LineChart
+          data={data}
+          margin={{
+            top: 0,
+            left: 20,
+            bottom: 10,
+            right: 20,
+          }}
+        >
           <XAxis dataKey="day" />
           <Line
             type="monotone"

@@ -1,7 +1,10 @@
-import { ActivityType } from "../models/Activity";
-import { NutritionType } from "../models/Nutrition";
-import { UserSessionDuration } from "../models/Session";
-import { UserType } from "../models/User";
+import {
+  UserType,
+  NutritionType,
+  UserActivityType,
+  UserSessionDurationType,
+  UserStatType,
+} from "../models/Models";
 
 export const users: UserType[] = [
   {
@@ -129,7 +132,7 @@ export const nutrition: NutritionType[] = [
   },
 ];
 
-export const activities: ActivityType[] = [
+export const activities: UserActivityType[] = [
   {
     userId: "1",
     activityData: [
@@ -282,125 +285,238 @@ export const activities: ActivityType[] = [
   },
 ];
 
-export const sessionDuration: UserSessionDuration[] = [
+export const sessionDuration: UserSessionDurationType[] = [
   {
     userId: "1",
     duration: [
-      { day: "Lundi", time: "68" },
-      { day: "Mardi", time: "45" },
-      { day: "Mercredi", time: "70" },
-      { day: "Jeudi", time: "55" },
-      { day: "Vendredi", time: "80" },
-      { day: "Samedi", time: "90" },
-      { day: "Dimanche", time: "60" },
+      { day: "L", time: "68" },
+      { day: "M", time: "45" },
+      { day: "M", time: "70" },
+      { day: "J", time: "55" },
+      { day: "V", time: "80" },
+      { day: "S", time: "90" },
+      { day: "D", time: "60" },
     ],
   },
   {
     userId: "2",
     duration: [
-      { day: "Lundi", time: "50" },
-      { day: "Mardi", time: "30" },
-      { day: "Mercredi", time: "40" },
-      { day: "Jeudi", time: "60" },
-      { day: "Vendredi", time: "70" },
-      { day: "Samedi", time: "75" },
-      { day: "Dimanche", time: "65" },
+      { day: "L", time: "50" },
+      { day: "M", time: "30" },
+      { day: "M", time: "40" },
+      { day: "J", time: "60" },
+      { day: "V", time: "70" },
+      { day: "S", time: "75" },
+      { day: "D", time: "65" },
     ],
   },
   {
     userId: "3",
     duration: [
-      { day: "Lundi", time: "120" },
-      { day: "Mardi", time: "115" },
-      { day: "Mercredi", time: "110" },
-      { day: "Jeudi", time: "100" },
-      { day: "Vendredi", time: "105" },
-      { day: "Samedi", time: "95" },
-      { day: "Dimanche", time: "85" },
+      { day: "L", time: "120" },
+      { day: "M", time: "115" },
+      { day: "M", time: "110" },
+      { day: "J", time: "100" },
+      { day: "V", time: "105" },
+      { day: "S", time: "95" },
+      { day: "D", time: "85" },
     ],
   },
   {
     userId: "4",
     duration: [
-      { day: "Lundi", time: "30" },
-      { day: "Mardi", time: "45" },
-      { day: "Mercredi", time: "50" },
-      { day: "Jeudi", time: "55" },
-      { day: "Vendredi", time: "60" },
-      { day: "Samedi", time: "65" },
-      { day: "Dimanche", time: "70" },
+      { day: "L", time: "30" },
+      { day: "M", time: "45" },
+      { day: "M", time: "50" },
+      { day: "J", time: "55" },
+      { day: "V", time: "60" },
+      { day: "S", time: "65" },
+      { day: "D", time: "70" },
     ],
   },
   {
     userId: "5",
     duration: [
-      { day: "Lundi", time: "25" },
-      { day: "Mardi", time: "35" },
-      { day: "Mercredi", time: "45" },
-      { day: "Jeudi", time: "50" },
-      { day: "Vendredi", time: "55" },
-      { day: "Samedi", time: "65" },
-      { day: "Dimanche", time: "75" },
+      { day: "L", time: "25" },
+      { day: "M", time: "35" },
+      { day: "M", time: "45" },
+      { day: "J", time: "50" },
+      { day: "V", time: "55" },
+      { day: "S", time: "65" },
+      { day: "D", time: "75" },
     ],
   },
   {
     userId: "6",
     duration: [
-      { day: "Lundi", time: "90" },
-      { day: "Mardi", time: "85" },
-      { day: "Mercredi", time: "95" },
-      { day: "Jeudi", time: "100" },
-      { day: "Vendredi", time: "105" },
-      { day: "Samedi", time: "110" },
-      { day: "Dimanche", time: "115" },
+      { day: "L", time: "90" },
+      { day: "M", time: "85" },
+      { day: "M", time: "95" },
+      { day: "J", time: "100" },
+      { day: "V", time: "105" },
+      { day: "S", time: "110" },
+      { day: "D", time: "115" },
     ],
   },
   {
     userId: "7",
     duration: [
-      { day: "Lundi", time: "40" },
-      { day: "Mardi", time: "45" },
-      { day: "Mercredi", time: "50" },
-      { day: "Jeudi", time: "55" },
-      { day: "Vendredi", time: "60" },
-      { day: "Samedi", time: "65" },
-      { day: "Dimanche", time: "70" },
+      { day: "L", time: "40" },
+      { day: "M", time: "45" },
+      { day: "M", time: "50" },
+      { day: "J", time: "55" },
+      { day: "V", time: "60" },
+      { day: "S", time: "65" },
+      { day: "D", time: "70" },
     ],
   },
   {
     userId: "8",
     duration: [
-      { day: "Lundi", time: "60" },
-      { day: "Mardi", time: "65" },
-      { day: "Mercredi", time: "70" },
-      { day: "Jeudi", time: "75" },
-      { day: "Vendredi", time: "80" },
-      { day: "Samedi", time: "85" },
-      { day: "Dimanche", time: "90" },
+      { day: "L", time: "60" },
+      { day: "M", time: "65" },
+      { day: "M", time: "70" },
+      { day: "J", time: "75" },
+      { day: "V", time: "80" },
+      { day: "S", time: "85" },
+      { day: "D", time: "90" },
     ],
   },
   {
     userId: "9",
     duration: [
-      { day: "Lundi", time: "100" },
-      { day: "Mardi", time: "95" },
-      { day: "Mercredi", time: "90" },
-      { day: "Jeudi", time: "85" },
-      { day: "Vendredi", time: "80" },
-      { day: "Samedi", time: "75" },
-      { day: "Dimanche", time: "70" },
+      { day: "L", time: "100" },
+      { day: "M", time: "95" },
+      { day: "M", time: "90" },
+      { day: "J", time: "85" },
+      { day: "V", time: "80" },
+      { day: "S", time: "75" },
+      { day: "D", time: "70" },
     ],
   },
   {
     userId: "10",
     duration: [
-      { day: "Lundi", time: "120" },
-      { day: "Mardi", time: "115" },
-      { day: "Mercredi", time: "110" },
-      { day: "Jeudi", time: "105" },
-      { day: "Vendredi", time: "100" },
-      { day: "Samedi", time: "95" },
-      { day: "Dimanche", time: "90" },
+      { day: "L", time: "120" },
+      { day: "M", time: "115" },
+      { day: "M", time: "110" },
+      { day: "J", time: "105" },
+      { day: "V", time: "100" },
+      { day: "S", time: "95" },
+      { day: "D", time: "90" },
     ],
+  },
+];
+
+export const stats: UserStatType[] = [
+  {
+    userId: "1",
+    stats: {
+      intensity: 8,
+      vitesse: 6,
+      force: 7,
+      endurance: 9,
+      energy: 5,
+      cardio: 4,
+    },
+  },
+  {
+    userId: "2",
+    stats: {
+      intensity: 4,
+      vitesse: 7,
+      force: 6,
+      endurance: 5,
+      energy: 8,
+      cardio: 9,
+    },
+  },
+  {
+    userId: "3",
+    stats: {
+      intensity: 9,
+      vitesse: 3,
+      force: 5,
+      endurance: 7,
+      energy: 6,
+      cardio: 8,
+    },
+  },
+  {
+    userId: "4",
+    stats: {
+      intensity: 5,
+      vitesse: 8,
+      force: 9,
+      endurance: 6,
+      energy: 4,
+      cardio: 7,
+    },
+  },
+  {
+    userId: "5",
+    stats: {
+      intensity: 7,
+      vitesse: 5,
+      force: 4,
+      endurance: 8,
+      energy: 9,
+      cardio: 6,
+    },
+  },
+  {
+    userId: "6",
+    stats: {
+      intensity: 6,
+      vitesse: 9,
+      force: 8,
+      endurance: 4,
+      energy: 7,
+      cardio: 5,
+    },
+  },
+  {
+    userId: "7",
+    stats: {
+      intensity: 3,
+      vitesse: 4,
+      force: 9,
+      endurance: 6,
+      energy: 8,
+      cardio: 7,
+    },
+  },
+  {
+    userId: "8",
+    stats: {
+      intensity: 10,
+      vitesse: 7,
+      force: 6,
+      endurance: 5,
+      energy: 9,
+      cardio: 4,
+    },
+  },
+  {
+    userId: "9",
+    stats: {
+      intensity: 7,
+      vitesse: 8,
+      force: 5,
+      endurance: 6,
+      energy: 4,
+      cardio: 9,
+    },
+  },
+  {
+    userId: "10",
+    stats: {
+      intensity: 5,
+      vitesse: 6,
+      force: 7,
+      endurance: 4,
+      energy: 10,
+      cardio: 3,
+    },
   },
 ];
