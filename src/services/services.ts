@@ -1,6 +1,7 @@
 import env from "../env";
 import { users, nutrition, activities, sessionDuration, stats, scores } from "../data/mock";
 import { NutritionType, ActivityType, UserType, SessionDurationType, StatType, ScoreType } from "../models/Models";
+import { ApiActivity, ApiSessions, ApiStat } from "../models/ApiModels";
 
 const fetchApi = async (endpoint: string, userId: string) => {
   if (userId === "12" || userId === "18") {
@@ -70,11 +71,12 @@ export const getActivity = async (userId: string): Promise<ActivityType[] | unde
 
   if (env.api === "distant") {
     const data = await fetchApi(`http://localhost:3000/user/${userId}/activity`, userId);
-    const returnedData = data.data.sessions.map((activity) => ({
+    const returnedData = data.data.sessions.map((activity: ApiActivity) => ({
       day: activity.day,
       poids: activity.kilogram,
       calories: activity.calories,
     }));
+
     return returnedData;
   }
 };
@@ -88,7 +90,7 @@ export const getDurations = async (userId: string): Promise<SessionDurationType[
   if (env.api === "distant") {
     const data = await fetchApi(`http://localhost:3000/user/${userId}/average-sessions`, userId);
     const convertDays = ["L", "M", "M", "J", "V", "S", "D"];
-    const returnedData = data.data.sessions.map((session) => ({
+    const returnedData = data.data.sessions.map((session: ApiSessions) => ({
       day: convertDays[session.day - 1],
       time: session.sessionLength,
     }));
@@ -106,13 +108,13 @@ export const getStats = async (userId: string): Promise<StatType[] | undefined> 
     const data = await fetchApi(`http://localhost:3000/user/${userId}/performance`, userId);
     const convertKinds = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"];
     const returnedData: StatType[] = [];
-    data.data.data.forEach((stat) => {
+    data.data.data.forEach((stat: ApiStat) => {
       const statObj = {
         subject: "",
         value: "",
       };
       statObj.subject = convertKinds[stat.kind - 1];
-      statObj.value = stat.value;
+      statObj.value = String(stat.value);
       returnedData.push(statObj);
     });
     return returnedData;
