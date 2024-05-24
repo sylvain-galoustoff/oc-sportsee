@@ -2,10 +2,10 @@
 
 ## Installation
 
-`git clone https://github.com/sylvain-galoustoff/oc-sportsee.git`
-`cd oc-sportsee`
-`npm install`
-`npm run dev`
+1. `git clone https://github.com/sylvain-galoustoff/oc-sportsee.git`
+2. `cd oc-sportsee`
+3. `npm install`
+4. `npm run dev`
 
 ## Utilisation
 
