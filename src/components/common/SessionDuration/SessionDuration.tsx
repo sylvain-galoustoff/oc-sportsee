@@ -1,11 +1,4 @@
-import {
-  Legend,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-} from "recharts";
+import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 import style from "./SessionDuration.module.scss";
 import { SessionDurationType } from "../../../models/Models";
 
@@ -30,14 +23,8 @@ function SessionDuration({ data }: PropsType) {
             right: 20,
           }}
         >
-          <XAxis dataKey="day" />
-          <Line
-            type="monotone"
-            dataKey="time"
-            stroke="#fff"
-            dot={false}
-            activeDot={true}
-          />
+          <XAxis dataKey="day" stroke="#fff" />
+          <Line type="monotone" dataKey="time" stroke="#fff" dot={false} activeDot={true} />
           <Tooltip
             contentStyle={{
               backgroundColor: "white",

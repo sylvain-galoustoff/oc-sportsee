@@ -58,6 +58,16 @@ export const users: UserType[] = [
     firstname: "Jack",
     lastname: "Davis",
   },
+  {
+    userId: "12",
+    firstname: "Ivy",
+    lastname: "Martinez",
+  },
+  {
+    userId: "18",
+    firstname: "Jack",
+    lastname: "Davis",
+  },
 ];
 
 export const nutrition: NutritionType[] = [
