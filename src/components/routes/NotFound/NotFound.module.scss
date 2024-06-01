@@ -7,3 +7,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.notFoundText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}

@@ -141,6 +141,20 @@ export const nutrition: NutritionType[] = [
     proteines: "65",
     calories: "2000",
   },
+  {
+    userId: "12",
+    glucides: "240",
+    lipides: "70",
+    proteines: "60",
+    calories: "2100",
+  },
+  {
+    userId: "18",
+    glucides: "190",
+    lipides: "60",
+    proteines: "65",
+    calories: "2000",
+  },
 ];
 
 export const activities: UserActivityType[] = [
@@ -294,6 +308,36 @@ export const activities: UserActivityType[] = [
       { day: "10", poids: "80.2", calories: "475" },
     ],
   },
+  {
+    userId: "12",
+    activityData: [
+      { day: "1", poids: "78", calories: "480" },
+      { day: "2", poids: "77.8", calories: "475" },
+      { day: "3", poids: "77.6", calories: "470" },
+      { day: "4", poids: "77.4", calories: "465" },
+      { day: "5", poids: "77.2", calories: "460" },
+      { day: "6", poids: "77.0", calories: "455" },
+      { day: "7", poids: "76.8", calories: "450" },
+      { day: "8", poids: "76.6", calories: "445" },
+      { day: "9", poids: "76.4", calories: "440" },
+      { day: "10", poids: "76.2", calories: "435" },
+    ],
+  },
+  {
+    userId: "18",
+    activityData: [
+      { day: "1", poids: "82", calories: "520" },
+      { day: "2", poids: "81.8", calories: "515" },
+      { day: "3", poids: "81.6", calories: "510" },
+      { day: "4", poids: "81.4", calories: "505" },
+      { day: "5", poids: "81.2", calories: "500" },
+      { day: "6", poids: "81.0", calories: "495" },
+      { day: "7", poids: "80.8", calories: "490" },
+      { day: "8", poids: "80.6", calories: "485" },
+      { day: "9", poids: "80.4", calories: "480" },
+      { day: "10", poids: "80.2", calories: "475" },
+    ],
+  },
 ];
 
 export const sessionDuration: UserSessionDurationType[] = [
@@ -417,6 +461,30 @@ export const sessionDuration: UserSessionDurationType[] = [
       { day: "D", time: "90" },
     ],
   },
+  {
+    userId: "12",
+    duration: [
+      { day: "L", time: "100" },
+      { day: "M", time: "95" },
+      { day: "M", time: "90" },
+      { day: "J", time: "85" },
+      { day: "V", time: "80" },
+      { day: "S", time: "75" },
+      { day: "D", time: "70" },
+    ],
+  },
+  {
+    userId: "18",
+    duration: [
+      { day: "L", time: "120" },
+      { day: "M", time: "115" },
+      { day: "M", time: "110" },
+      { day: "J", time: "105" },
+      { day: "V", time: "100" },
+      { day: "S", time: "95" },
+      { day: "D", time: "90" },
+    ],
+  },
 ];
 
 export const stats: UserStatType[] = [
@@ -521,6 +589,28 @@ export const stats: UserStatType[] = [
   },
   {
     userId: "10",
+    statistiques: [
+      { subject: "Intensité", value: "6" },
+      { subject: "Vitesse", value: "8" },
+      { subject: "Force", value: "9" },
+      { subject: "Endurance", value: "7" },
+      { subject: "Energie", value: "10" },
+      { subject: "Cardio", value: "8" },
+    ],
+  },
+  {
+    userId: "12",
+    statistiques: [
+      { subject: "Intensité", value: "10" },
+      { subject: "Vitesse", value: "7" },
+      { subject: "Force", value: "8" },
+      { subject: "Endurance", value: "9" },
+      { subject: "Energie", value: "6" },
+      { subject: "Cardio", value: "10" },
+    ],
+  },
+  {
+    userId: "18",
     statistiques: [
       { subject: "Intensité", value: "6" },
       { subject: "Vitesse", value: "8" },
@@ -670,6 +760,36 @@ export const scores: UserScoreType[] = [
   },
   {
     userId: "10",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 88,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "12",
+    progress: [
+      {
+        name: "ref",
+        progress: 100,
+        fill: "#fff",
+      },
+      {
+        name: "score",
+        progress: 74,
+        fill: "#E60000",
+      },
+    ],
+  },
+  {
+    userId: "18",
     progress: [
       {
         name: "ref",
