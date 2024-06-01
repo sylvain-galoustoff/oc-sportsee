@@ -1,18 +1,9 @@
-import {
-  BarChart,
-  XAxis,
-  YAxis,
-  Bar,
-  CartesianGrid,
-  ResponsiveContainer,
-  Legend,
-  Tooltip,
-} from "recharts";
+import { BarChart, XAxis, YAxis, Bar, CartesianGrid, ResponsiveContainer, Legend, Tooltip } from "recharts";
 import style from "./Activity.module.scss";
-import { ActivityDataType } from "../../../models/Activity";
+import { ActivityType } from "../../../models/Models";
 
 type PropsType = {
-  data: ActivityDataType;
+  data: ActivityType[] | undefined;
 };
 
 function Activity({ data }: PropsType) {
