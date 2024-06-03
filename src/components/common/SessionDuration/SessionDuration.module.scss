@@ -6,6 +6,7 @@
   @include card;
   flex: 1;
   background-color: $primary;
+  overflow: hidden;
 }
 
 .layer {

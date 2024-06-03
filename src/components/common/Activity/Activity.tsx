@@ -2,6 +2,7 @@ import { BarChart, XAxis, Bar, CartesianGrid, ResponsiveContainer, Legend, Toolt
 import style from "./Activity.module.scss";
 import { ActivityType } from "../../../models/Models";
 import CustomLegend from "./CustomLegend.jsx";
+import CustomTooltip from "./CustomTooltip.jsx";
 
 type PropsType = {
   data: ActivityType[] | undefined;
@@ -23,24 +24,7 @@ function Activity({ data }: PropsType) {
           barSize={8}
           barGap={8}
         >
-          <Tooltip
-            wrapperStyle={{
-              display: "flex",
-              justifyContent: "center",
-              gap: 20,
-              backgroundColor: "aqua",
-            }}
-            contentStyle={{
-              backgroundColor: "red",
-              textAlign: "center",
-            }}
-            labelStyle={{
-              display: "none",
-            }}
-            itemStyle={{
-              color: "white",
-            }}
-          />
+          <Tooltip content={<CustomTooltip />} />
           <Legend
             wrapperStyle={{
               top: 20,
