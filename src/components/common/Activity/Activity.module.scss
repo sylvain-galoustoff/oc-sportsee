@@ -4,10 +4,29 @@
   position: relative;
   height: 320px;
   @include card;
+}
 
-  p {
-    position: absolute;
-    top: 20px;
-    left: 40px;
-  }
+.title {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+.legend {
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+}
+
+.legendItem {
+  color: $textLight;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legendIcon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }

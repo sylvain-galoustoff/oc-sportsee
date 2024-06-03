@@ -1,6 +1,7 @@
-import { BarChart, XAxis, YAxis, Bar, CartesianGrid, ResponsiveContainer, Legend, Tooltip } from "recharts";
+import { BarChart, XAxis, Bar, CartesianGrid, ResponsiveContainer, Legend, Tooltip } from "recharts";
 import style from "./Activity.module.scss";
 import { ActivityType } from "../../../models/Models";
+import CustomLegend from "./CustomLegend.jsx";
 
 type PropsType = {
   data: ActivityType[] | undefined;
@@ -9,15 +10,15 @@ type PropsType = {
 function Activity({ data }: PropsType) {
   return (
     <div className={style.graph}>
-      <p>Activité quotidienne</p>
+      <p className={style.title}>Activité quotidienne</p>
       <ResponsiveContainer height={320}>
         <BarChart
           data={data}
           margin={{
             top: 70,
             bottom: 0,
-            left: 20,
-            right: 20,
+            left: 50,
+            right: 50,
           }}
           barSize={8}
           barGap={8}
@@ -41,18 +42,17 @@ function Activity({ data }: PropsType) {
             }}
           />
           <Legend
-            align="right"
-            iconType="circle"
             wrapperStyle={{
-              top: 0,
-              right: 0,
-              paddingTop: 20,
-              paddingRight: 40,
+              top: 20,
+              right: 80,
+              display: "flex",
+              justifyContent: "flex-end",
+              width: "100%",
             }}
+            content={<CustomLegend />}
           />
           <CartesianGrid vertical={false} strokeDasharray="2" />
           <XAxis dataKey="day" />
-          <YAxis dataKey="calories" />
           <Bar dataKey="poids" fill="#282D30" />
           <Bar dataKey="calories" fill="#E60000" />
         </BarChart>
