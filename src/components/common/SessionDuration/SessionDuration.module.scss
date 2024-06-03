@@ -8,6 +8,21 @@
   background-color: $primary;
 }
 
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba($black, .05);
+  pointer-events: none;
+}
+
 .legend {
   opacity: .5;
+  color: $white;
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  left: 30px;
 }
