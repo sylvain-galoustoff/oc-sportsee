@@ -1,4 +1,4 @@
-import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 import style from "./SessionDuration.module.scss";
 import { SessionDurationType } from "../../../models/Models";
 
@@ -7,12 +7,8 @@ type PropsType = {
 };
 
 function SessionDuration({ data }: PropsType) {
-  const renderCustomLegend = () => {
-    return <span className={style.legend}>Durée moyenne des sessions</span>;
-  };
-
   return (
-    <div className={style.graph}>
+    <div className={style.graph} id="session-duration">
       <ResponsiveContainer height={320}>
         <LineChart
           data={data}
@@ -23,8 +19,8 @@ function SessionDuration({ data }: PropsType) {
             right: 20,
           }}
         >
-          <XAxis dataKey="day" stroke="#fff" />
-          <Line type="monotone" dataKey="time" stroke="#fff" dot={false} activeDot={true} />
+          {/* <XAxis dataKey="day" stroke="#fff" /> */}
+          <Line type="monotone" dataKey="time" stroke="#fff" dot={true} activeDot={true} />
           <Tooltip
             contentStyle={{
               backgroundColor: "white",
@@ -35,13 +31,6 @@ function SessionDuration({ data }: PropsType) {
             }}
             itemStyle={{
               color: "black",
-            }}
-          />
-          <Legend
-            formatter={renderCustomLegend}
-            wrapperStyle={{
-              top: 20,
-              left: 20,
             }}
           />
         </LineChart>
