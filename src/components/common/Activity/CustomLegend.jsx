@@ -1,7 +1,6 @@
 import style from "./Activity.module.scss";
 
 const CustomLegend = (props) => {
-  console.log(props);
   const { payload } = props;
 
   const unit = {
