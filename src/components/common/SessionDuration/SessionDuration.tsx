@@ -1,6 +1,7 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 import style from "./SessionDuration.module.scss";
 import { SessionDurationType } from "../../../models/Models";
+import CustomTooltip from "./CustomTooltip";
 
 type PropsType = {
   data: SessionDurationType[] | undefined;
@@ -17,8 +18,6 @@ function SessionDuration({ data }: PropsType) {
 
       // Calculer la coordonnée X par rapport au parent
       const coordXRelativeToParent = activeDotRect.left - parentRect.left;
-
-      console.log("Coordonnée X par rapport au parent:", coordXRelativeToParent);
       shader.style.left = coordXRelativeToParent + 3 + "px";
     }
   };
@@ -51,6 +50,7 @@ function SessionDuration({ data }: PropsType) {
             itemStyle={{
               color: "black",
             }}
+            content={<CustomTooltip />}
           />
         </LineChart>
       </ResponsiveContainer>

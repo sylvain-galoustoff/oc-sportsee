@@ -1,7 +1,7 @@
 import style from "./NutritionCard.module.scss";
 import calories from "../../../assets/calories-icon.png";
 import proteines from "../../../assets/protein-icon.png";
-import glucides from "../../../assets/carbs-icon.png";
+import carbohydrates from "../../../assets/carbs-icon.png";
 import lipides from "../../../assets/fat-icon.png";
 
 type PropsType = {
@@ -23,7 +23,7 @@ function NutritionCard({ label, value }: PropsType) {
     },
     glucides: {
       textLabel: "Glucides",
-      icon: glucides,
+      icon: carbohydrates,
       unit: "g",
     },
     lipides: {
@@ -36,11 +36,7 @@ function NutritionCard({ label, value }: PropsType) {
   return (
     <div className={`card ${style.card}`}>
       <div className={style.icon}>
-        <img
-          src={nutrition[label]?.icon}
-          alt={`Icône ${nutrition[label]?.textLabel}`}
-          className="responsive"
-        />
+        <img src={nutrition[label]?.icon} alt={`Icône ${nutrition[label]?.textLabel}`} className="responsive" />
       </div>
       <div className={style.content}>
         <p className="h3">

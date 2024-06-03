@@ -6,7 +6,7 @@ export type UserType = {
 
 export type NutritionType = {
   userId: string;
-  glucides: string;
+  carbohydrates: string;
   lipides: string;
   proteines: string;
   calories: string;
