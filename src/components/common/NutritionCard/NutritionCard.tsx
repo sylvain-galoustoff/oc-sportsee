@@ -1,11 +1,11 @@
 import style from "./NutritionCard.module.scss";
 import calories from "../../../assets/calories-icon.png";
-import proteines from "../../../assets/protein-icon.png";
+import proteins from "../../../assets/protein-icon.png";
 import carbohydrates from "../../../assets/carbs-icon.png";
-import lipides from "../../../assets/fat-icon.png";
+import lipids from "../../../assets/fat-icon.png";
 
 type PropsType = {
-  label: "calories" | "proteines" | "glucides" | "lipides";
+  label: "calories" | "proteins" | "carbohydrates" | "lipids";
   value: string | undefined;
 };
 
@@ -16,19 +16,19 @@ function NutritionCard({ label, value }: PropsType) {
       icon: calories,
       unit: "kCal",
     },
-    proteines: {
+    proteins: {
       textLabel: "Protéines",
-      icon: proteines,
+      icon: proteins,
       unit: "g",
     },
-    glucides: {
+    carbohydrates: {
       textLabel: "Glucides",
       icon: carbohydrates,
       unit: "g",
     },
-    lipides: {
+    lipids: {
       textLabel: "Lipides",
-      icon: lipides,
+      icon: lipids,
       unit: "g",
     },
   };

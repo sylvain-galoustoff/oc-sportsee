@@ -53,9 +53,9 @@ export const getNutrition = async (userId: string): Promise<NutritionType | unde
     const data = await fetchApi(`http://localhost:3000/user/${userId}`, userId);
     const returnedData = {
       userId: data.data.id,
-      glucides: data.data.keyData.carbohydrateCount,
-      lipides: data.data.keyData.lipidCount,
-      proteines: data.data.keyData.proteinCount,
+      carbohydrates: data.data.keyData.carbohydrateCount,
+      lipids: data.data.keyData.lipidCount,
+      proteins: data.data.keyData.proteinCount,
       calories: data.data.keyData.calorieCount,
     };
     return returnedData;

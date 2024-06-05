@@ -81,9 +81,9 @@ function Dashboard() {
           </main>
           <aside id={style.aside}>
             <NutritionCard label="calories" value={nutrition?.calories} />
-            <NutritionCard label="proteines" value={nutrition?.proteines} />
-            <NutritionCard label="glucides" value={nutrition?.glucides} />
-            <NutritionCard label="lipides" value={nutrition?.lipides} />
+            <NutritionCard label="proteins" value={nutrition?.proteins} />
+            <NutritionCard label="carbohydrates" value={nutrition?.carbohydrates} />
+            <NutritionCard label="lipids" value={nutrition?.lipids} />
           </aside>
         </div>
       </div>
