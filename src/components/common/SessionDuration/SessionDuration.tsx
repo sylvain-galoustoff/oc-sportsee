@@ -1,5 +1,6 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 import style from "./SessionDuration.module.scss";
+import PropTypes from "prop-types";
 import { SessionDurationType } from "../../../models/Models";
 import CustomTooltip from "./CustomTooltip";
 
@@ -57,5 +58,12 @@ function SessionDuration({ data }: PropsType) {
     </div>
   );
 }
+
+SessionDuration.propTypes = {
+  data: PropTypes.shape({
+    day: PropTypes.string,
+    time: PropTypes.string,
+  }),
+};
 
 export default SessionDuration;

@@ -1,4 +1,5 @@
 import { RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 import style from "./Score.module.scss";
 import { ScoreType } from "../../../models/Models";
 
@@ -34,5 +35,13 @@ function Score({ data }: PropsType) {
     </div>
   );
 }
+
+Score.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string,
+    progress: PropTypes.number,
+    fill: PropTypes.string,
+  }),
+};
 
 export default Score;

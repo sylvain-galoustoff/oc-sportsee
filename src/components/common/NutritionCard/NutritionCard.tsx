@@ -3,6 +3,7 @@ import calories from "../../../assets/calories-icon.png";
 import proteins from "../../../assets/protein-icon.png";
 import carbohydrates from "../../../assets/carbs-icon.png";
 import lipids from "../../../assets/fat-icon.png";
+import PropTypes from "prop-types";
 
 type PropsType = {
   label: "calories" | "proteins" | "carbohydrates" | "lipids";
@@ -48,5 +49,10 @@ function NutritionCard({ label, value }: PropsType) {
     </div>
   );
 }
+
+NutritionCard.propTypes = {
+  label: PropTypes.oneOf(["calories", "proteins", "carbohydrates", "lipids"]),
+  value: PropTypes.string,
+};
 
 export default NutritionCard;

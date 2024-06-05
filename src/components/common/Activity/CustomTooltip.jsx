@@ -6,7 +6,7 @@ const CustomTooltip = (props) => {
   const renderTooltipItems = Object.keys(payload).map((key) => (
     <p key={key} className={`small ${style.tooltipItem}`}>
       {payload[key].value}
-      {payload[key].dataKey === "poids" ? "kg" : "kCal"}
+      {payload[key].dataKey === "weight" ? "kg" : "kCal"}
     </p>
   ));
 

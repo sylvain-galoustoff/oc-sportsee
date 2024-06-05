@@ -1,4 +1,5 @@
 import { PolarGrid, RadarChart, ResponsiveContainer, PolarAngleAxis, Radar } from "recharts";
+import PropTypes from "prop-types";
 import style from "./Radar.module.scss";
 import { StatType } from "../../../models/Models";
 
@@ -19,5 +20,12 @@ function Stats({ data }: PropsType) {
     </div>
   );
 }
+
+Stats.propTypes = {
+  data: PropTypes.shape({
+    subject: PropTypes.string,
+    value: PropTypes.string,
+  }),
+};
 
 export default Stats;

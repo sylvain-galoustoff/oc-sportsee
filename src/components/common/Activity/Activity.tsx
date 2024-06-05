@@ -1,4 +1,5 @@
 import { BarChart, XAxis, Bar, CartesianGrid, ResponsiveContainer, Legend, Tooltip } from "recharts";
+import PropTypes from "prop-types";
 import style from "./Activity.module.scss";
 import { ActivityType } from "../../../models/Models";
 import CustomLegend from "./CustomLegend.jsx";
@@ -37,12 +38,20 @@ function Activity({ data }: PropsType) {
           />
           <CartesianGrid vertical={false} strokeDasharray="2" />
           <XAxis dataKey="day" />
-          <Bar dataKey="poids" fill="#282D30" />
+          <Bar dataKey="weight" fill="#282D30" />
           <Bar dataKey="calories" fill="#E60000" />
         </BarChart>
       </ResponsiveContainer>
     </div>
   );
 }
+
+Activity.propTypes = {
+  data: PropTypes.shape({
+    day: PropTypes.string,
+    weight: PropTypes.string,
+    calories: PropTypes.string,
+  }),
+};
 
 export default Activity;

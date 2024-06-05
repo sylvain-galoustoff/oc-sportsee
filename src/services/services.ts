@@ -73,7 +73,7 @@ export const getActivity = async (userId: string): Promise<ActivityType[] | unde
     const data = await fetchApi(`http://localhost:3000/user/${userId}/activity`, userId);
     const returnedData = data.data.sessions.map((activity: ApiActivity) => ({
       day: activity.day,
-      poids: activity.kilogram,
+      weight: activity.kilogram,
       calories: activity.calories,
     }));
 

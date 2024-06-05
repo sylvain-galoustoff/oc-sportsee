@@ -14,7 +14,7 @@ export type NutritionType = {
 
 export type ActivityType = {
   day: string;
-  poids: string;
+  weight: string;
   calories: string;
 };
 

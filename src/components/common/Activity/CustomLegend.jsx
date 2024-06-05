@@ -4,7 +4,7 @@ const CustomLegend = (props) => {
   const { payload } = props;
 
   const unit = {
-    poids: "kg",
+    weight: "kg",
     calories: "kCal",
   };
 
@@ -18,7 +18,7 @@ const CustomLegend = (props) => {
               backgroundColor: entry.color,
             }}
           ></span>
-          {entry.value} ({unit[entry.value]})
+          {entry.value === "weight" ? "poids" : entry.value} ({unit[entry.value]})
         </p>
       ))}
     </div>
